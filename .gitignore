@@ -31,4 +31,7 @@
 *.out
 *.app
 
+# build folder
+build/
+
 .clang-format
