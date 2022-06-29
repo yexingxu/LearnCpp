@@ -4,7 +4,7 @@
  * @Author: chen, hua
  * @Date: 2022-06-25 13:12:31
  * @LastEditors: chen, hua
- * @LastEditTime: 2022-06-25 13:47:09
+ * @LastEditTime: 2022-06-25 14:30:04
  */
 
 #ifndef LIST_H_
@@ -99,6 +99,21 @@ class List {
     head_ = nullptr;
     tail_ = nullptr;
     size_ = 0;  //清空后size_为0
+  }
+
+  void reserve() noexcept {
+    if (empty()) {
+      return;
+    }
+    Node<T>* cur = head_;
+    Node<T>* pre = nullptr;
+    while (cur) {
+      Node<T>* tmp = cur->next_;
+      cur->next_ = pre;
+      pre = cur;
+      cur = tmp;
+    }
+    head_ = pre;
   }
   bool empty() const { return size_ == 0; }
   bool exist(const T& value) const {

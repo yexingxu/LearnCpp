@@ -4,7 +4,7 @@
  * @Author: chen, hua
  * @Date: 2022-04-08 23:01:00
  * @LastEditors: chen, hua
- * @LastEditTime: 2022-06-25 13:47:40
+ * @LastEditTime: 2022-06-25 14:14:46
  */
 // bubbling sort
 #include <algorithm>
@@ -24,4 +24,13 @@ int main() {
   la.reverse();
   SharedPtr<int> sp(new int(1));
   List<int> lla;
+  for (int i = 0; i < 10; i++) {
+    lla.push_back(i);
+    std::cout << lla[i] << " ";
+  }
+  std::cout << std::endl;
+  lla.reserve();
+  for (int i = 0; i < lla.size(); i++) {
+    std::cout << lla[i] << " ";
+  }
 }
